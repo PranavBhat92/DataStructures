@@ -1,1 +1,6 @@
 E:\Study\DataStructures\DataStructures\LinkedLists\bin\Debug\LinkedLists.exe.config
+E:\Study\DataStructures\DataStructures\LinkedLists\bin\Debug\LinkedLists.exe
+E:\Study\DataStructures\DataStructures\LinkedLists\bin\Debug\LinkedLists.pdb
+E:\Study\DataStructures\DataStructures\LinkedLists\obj\Debug\LinkedLists.csprojResolveAssemblyReference.cache
+E:\Study\DataStructures\DataStructures\LinkedLists\obj\Debug\LinkedLists.exe
+E:\Study\DataStructures\DataStructures\LinkedLists\obj\Debug\LinkedLists.pdb
