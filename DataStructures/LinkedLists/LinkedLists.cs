@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace LinkedLists
 {
@@ -43,8 +45,14 @@ namespace LinkedLists
     {
         static void Main(string[] args)
         {
+
+            //var linkedList = new LinkedList<int>();
+
             SList singleList = new SList();
             DList doubleList = new DList();
+
+            //Queue q = new Queue();
+            //Stack s = new Stack();
 
             InsertFrontSingly(singleList,5);
             InsertFrontSingly(singleList, 10);
