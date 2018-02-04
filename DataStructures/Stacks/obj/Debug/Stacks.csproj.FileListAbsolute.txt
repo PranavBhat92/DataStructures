@@ -1,0 +1,6 @@
+E:\Study\DataStructures\DataStructures\Stacks\bin\Debug\Stacks.exe.config
+E:\Study\DataStructures\DataStructures\Stacks\bin\Debug\Stacks.exe
+E:\Study\DataStructures\DataStructures\Stacks\bin\Debug\Stacks.pdb
+E:\Study\DataStructures\DataStructures\Stacks\obj\Debug\Stacks.csprojResolveAssemblyReference.cache
+E:\Study\DataStructures\DataStructures\Stacks\obj\Debug\Stacks.exe
+E:\Study\DataStructures\DataStructures\Stacks\obj\Debug\Stacks.pdb
