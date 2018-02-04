@@ -17,6 +17,8 @@ namespace Stacks
             push(stack, 5);
             push(stack, 10);
             push(stack, 15);
+            push(stack, 20);
+            push(stack, 25);
 
             //peek
             int item = peek(stack);
@@ -44,7 +46,9 @@ namespace Stacks
         {
             if (stack.items.Length == stack.top)
             {
+                var array = stack.items;
                 stack.items = (stack.top == 0) ? new int[4] : new int[stack.top*2];
+                Array.Copy(array, stack.items, array.Length);
             }
             stack.items[stack.top++] = item;
         }
