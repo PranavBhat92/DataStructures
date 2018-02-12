@@ -1,1 +1,6 @@
 E:\Study\DataStructures\DataStructures\Queues\bin\Debug\Queues.exe.config
+E:\Study\DataStructures\DataStructures\Queues\obj\Debug\Queues.csprojResolveAssemblyReference.cache
+E:\Study\DataStructures\DataStructures\Queues\bin\Debug\Queues.exe
+E:\Study\DataStructures\DataStructures\Queues\bin\Debug\Queues.pdb
+E:\Study\DataStructures\DataStructures\Queues\obj\Debug\Queues.exe
+E:\Study\DataStructures\DataStructures\Queues\obj\Debug\Queues.pdb

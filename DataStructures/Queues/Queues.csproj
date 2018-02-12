@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayQueues.cs" />
+    <Compile Include="GenericPOC.cs" />
     <Compile Include="LinkedListQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
