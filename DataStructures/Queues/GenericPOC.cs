@@ -35,39 +35,52 @@ namespace Queues
 
         public IEnumerator<T> GetEnumerator()
         {
-            return GetEnumerator();
+            return _items.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetEnumerator();
+            return _items.GetEnumerator();
         }
     }
 
-    public class GenericPOC
-    {
-        public static void Main(string[] args)
-        {
-            //GClass<int> intData = new GClass<int>(5);
-            //intData.displayDataType();
+    //public class GenericPOC
+    //{
+    //    public static void Main(string[] args)
+    //    {
+    //        GClass<int> intData = new GClass<int>(5);
+    //        intData.displayDataType();
 
-            //GClass<string> stringData = new GClass<string>("Pranav");
-            //stringData.displayDataType();
+    //        GClass<string> stringData = new GClass<string>("Pranav");
+    //        stringData.displayDataType();
 
 
-            GenericEnumerable<int> intList = new GenericEnumerable<int>();
-            intList.Add(5);
-            intList.Add(10);
-            intList.Add(15);
-            intList.Add(20);
-            intList.Add(25);
+    //        GenericEnumerable<int> intList = new GenericEnumerable<int>();
+    //        intList.Add(5);
+    //        intList.Add(10);
+    //        intList.Add(15);
+    //        intList.Add(20);
+    //        intList.Add(25);
 
-            //foreach (var item in intList)
-            //{
-                Console.WriteLine(intList.Count());
-            //}
+    //        foreach (var item in intList)
+    //        {
+    //            Console.WriteLine(item);
+    //        }
 
-            Console.ReadLine();
-        }
-    }
+    //        GenericEnumerable<string> stringList = new GenericEnumerable<string>();
+    //        stringList.Add("P");
+    //        stringList.Add("R");
+    //        stringList.Add("A");
+    //        stringList.Add("N");
+    //        stringList.Add("A");
+    //        stringList.Add("V");
+
+    //        foreach (var item in stringList)
+    //        {
+    //            Console.WriteLine(item);
+    //        }
+
+    //        Console.ReadLine();
+    //    }
+    //}
 }
