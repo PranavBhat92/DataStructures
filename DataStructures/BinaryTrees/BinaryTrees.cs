@@ -27,7 +27,6 @@ namespace BinaryTrees
         private BNode<T> _head;
         private int _count;
 
-
         #region Add
 
         public void Add(T value)
@@ -71,7 +70,6 @@ namespace BinaryTrees
 
         #endregion
 
-
         #region Contains
 
         public bool Contains(T value)
@@ -111,7 +109,6 @@ namespace BinaryTrees
 
         #endregion
 
-
         #region Remove
 
         public bool Remove(T value)
@@ -146,7 +143,7 @@ namespace BinaryTrees
                     }
                 }
             }
-            else if (current.Right.Left == null)    // If there is no left subtree for the right child then
+            else if (current.Right.Left == null)    // If there is no left subtree for the right child then the right child (& its subtree) will replace the deleted node
             {
                 current.Right.Left = current.Left;
 
@@ -168,7 +165,7 @@ namespace BinaryTrees
                     }
                 }
             }
-            else
+            else // If right child of the deleted node has a left subtree, then we traverse that tree till we get the minimum node
             {
                 BNode<T> leftMost = current.Right.Left;
                 BNode<T> leftMostParent = current.Right;
@@ -205,16 +202,130 @@ namespace BinaryTrees
             return true;
         }
 
-    #endregion
+        #endregion
 
-    public IEnumerator<T> GetEnumerator()
+        #region Pre-Order Traversal
+
+        public void PreOrderTraversal(Action<T> action)
         {
-            throw new NotImplementedException();
+            PreOrderTraversal(action,_head);
+        }
+
+
+        public void PreOrderTraversal(Action<T> action, BNode<T> node)
+        {
+            if (node!=null)
+            {
+                action(node.Value);
+                PreOrderTraversal(action,node.Left);
+                PreOrderTraversal(action,node.Right);
+            }
+        }
+
+        #endregion
+
+        #region Post-Order Traversal
+
+        public void PostOrderTraversal(Action<T> action)
+        {
+            PostOrderTraversal(action, _head);
+        }
+
+
+        public void PostOrderTraversal(Action<T> action, BNode<T> node)
+        {
+            if (node != null)
+            {                
+                PostOrderTraversal(action, node.Left);
+                PostOrderTraversal(action, node.Right);
+                action(node.Value);
+            }
+        }
+
+        #endregion
+
+        #region In-Order Traversal
+
+        public void InOrderTraversal(Action<T> action)
+        {
+            InOrderTraversal(action, _head);
+        }
+
+
+        public void InOrderTraversal(Action<T> action, BNode<T> node)
+        {
+            if (node != null)
+            {                
+                InOrderTraversal(action, node.Left);
+                action(node.Value);
+                InOrderTraversal(action, node.Right);
+            }
+        }
+
+        #endregion
+
+        #region In-Order Traversal non recursive
+
+
+        public IEnumerator<T> InOrderTraversal()
+        {
+            if (_head != null)
+            {
+                Stack<BNode<T>> stack = new Stack<BNode<T>>();
+                BNode<T> current = _head;
+                bool goLeft = true;
+
+                stack.Push(current);
+
+                while(stack.Count > 0)
+                {
+                    if(goLeft)
+                    {
+                        while (current.Left != null)
+                        {
+                            stack.Push(current);
+                            current = current.Left;
+                        }
+                    }
+
+                    yield return current.Value;
+
+                    if (current.Right != null)
+                    {
+                        current = current.Right;
+                        goLeft = true;
+                    }
+                    else
+                    {
+                        current = stack.Pop();
+                        goLeft = false;
+                    }
+
+                }
+            }
+        }
+
+        #endregion
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return InOrderTraversal();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
+        }
+
+        public void Clear()
+        {
+            _head = null;
+            _count = 0;
+        }
+
+        public int Count()
+        {
+            return _count;
         }
     }
 
@@ -222,7 +333,29 @@ namespace BinaryTrees
     {
         public static void Main(string[] args)
         {
-            Console.ReadLine();
+            BTree<string> tree = new BTree<string>();
+            string input = string.Empty;
+
+            while (!input.Equals("quit",StringComparison.CurrentCultureIgnoreCase))
+            {
+                Console.Write("> ");
+                input = Console.ReadLine();
+                string[] words = input.Split(new[] { ' ' },StringSplitOptions.RemoveEmptyEntries);
+                foreach (var word in words)
+                {
+                    tree.Add(word);
+                }
+                Console.WriteLine("Word Count = " + tree.Count());
+
+                foreach (var word in tree)
+                {
+                    Console.Write(word + " ");
+                }
+                Console.WriteLine();
+                tree.Clear();
+            }
+
+
         }
     }
 }
